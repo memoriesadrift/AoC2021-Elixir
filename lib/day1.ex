@@ -12,14 +12,12 @@ defmodule Day1 do
   end
 
   def solve1() do
-    get_input(1, false)
-    |> Enum.map(fn elem -> String.to_integer elem end)
+    get_input_as_int_list(1, false)
     |> compare()
   end
 
   def solve2() do
-    get_input(1, false)
-    |> Enum.map(fn elem -> String.to_integer elem end)
+    get_input_as_int_list(1, false)
     |> compare2()
   end
 

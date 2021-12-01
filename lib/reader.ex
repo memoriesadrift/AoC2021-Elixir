@@ -8,4 +8,9 @@ defmodule Reader do
     get_input_from_file(day, test)
     |> String.split("\n", trim: true)
   end
+
+  def get_input_as_int_list(day, test \\ false) do
+    get_input(day, test)
+    |> Enum.map(&(String.to_integer(&1)))
+  end
 end
