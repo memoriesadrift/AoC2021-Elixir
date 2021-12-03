@@ -22,5 +22,4 @@ defmodule Template do
 
   def format_output(output) do
   end
-
 end

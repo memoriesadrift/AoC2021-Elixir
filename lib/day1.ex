@@ -36,5 +36,4 @@ defmodule Day1 do
   def format_output(output) do
       "The measurement increases #{output} times"
   end
-
 end
