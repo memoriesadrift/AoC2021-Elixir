@@ -35,7 +35,7 @@ defmodule Day4 do
 
   def get_bingo_boards(input) do
     board_size = 5
-    Enum.filter(input, fn elem -> !String.contains?(elem, ",") end)
+    Enum.filter(input, &(!String.contains?(&1, ",")))
     |> Enum.map(fn row ->
       String.split(row, " ", trim: true)
       |> Enum.map(&String.to_integer/1)
@@ -69,6 +69,7 @@ defmodule Day4 do
     row_complete? = Enum.any?(board, fn row ->
       Enum.all?(row, fn elem -> elem.checked end)
     end)
+
     column_complete? = Enum.any?(column_board, fn row ->
       Enum.all?(row, fn elem -> elem.checked end)
     end)

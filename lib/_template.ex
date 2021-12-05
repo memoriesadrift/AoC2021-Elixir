@@ -9,7 +9,6 @@ defmodule Template do
   def run2() do
     solve2()
     |> format_output
-
   end
 
   def solve1() do
@@ -21,5 +20,6 @@ defmodule Template do
   end
 
   def format_output(output) do
+    output
   end
 end
