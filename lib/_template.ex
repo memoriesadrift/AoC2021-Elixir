@@ -12,11 +12,11 @@ defmodule Template do
   end
 
   def solve1() do
-    get_input(1)
+    get_input(1, true)
   end
 
   def solve2() do
-    get_input(1)
+    get_input(1, true)
   end
 
   def format_output(output) do
