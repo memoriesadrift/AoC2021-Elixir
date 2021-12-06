@@ -37,6 +37,12 @@ defmodule Reader do
     |> Enum.map(&(String.to_integer(&1)))
   end
 
+  def get_single_line_input_as_int_list(day, test \\ false) do
+    get_input_from_file(day, test)
+    |> String.split(",", trim: true)
+    |> Enum.map(&(String.to_integer(&1)))
+  end
+
   def get_input_as_binary_number_list(day, test \\ false) do
     get_input(day, test)
     |> Enum.map(&String.graphemes/1)
