@@ -13,7 +13,7 @@ defmodule Day9 do
 
   def solve1() do
     get_input(9)
-    |> create_map()
+    |> Helpers.Matrix.create_map()
     |> find_lowest_points()
     |> Enum.map(fn {value, {_x, _y}} -> value + 1 end)
     |> Enum.sum()
@@ -21,7 +21,7 @@ defmodule Day9 do
 
   def solve2() do
     get_input(9)
-    |> create_map()
+    |> Helpers.Matrix.create_map()
     |> Helpers.Matrix.with_mask()
     |> Kernel.then(fn {map, mask} ->
       find_basins(mask, map, find_lowest_points(map), [])
@@ -67,15 +67,6 @@ defmodule Day9 do
       true ->
         points
     end
-  end
-
-  def create_map(list) do
-    list
-    |> Enum.map(fn row ->
-      String.split(row, "", trim: true)
-      |> Enum.map(&String.to_integer/1)
-   end)
-   |> Helpers.Matrix.from_list()
   end
 
   def format_output(output) do
